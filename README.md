@@ -6,7 +6,7 @@ An interactive simulation demonstrating how Automated Guided Vehicles (AGVs) nav
 
 ## 🌐 Live Demo
 
-- **Portfolio Page**: [View Portfolio](https://yourusername.github.io/agv-simulator/portfolio.html)
+- **Portfolio Page**: [View Portfolio](https://yourusername.github.io/agv-simulator/)
 - **Live Simulator**: [Launch Simulator](https://yourusername.github.io/agv-simulator/)
 
 ## ✨ Features
@@ -28,8 +28,8 @@ An interactive simulation demonstrating how Automated Guided Vehicles (AGVs) nav
 ## 🚀 Getting Started
 
 1. Clone this repository
-2. Open `portfolio.html` for the project overview
-3. Open `index.html` to launch the simulator
+2. Open `index.html` for the project overview
+3. Open `demo.html` to launch the simulator
 4. Click to place obstacles and watch the AGV navigate!
 
 ## 📖 How It Works
