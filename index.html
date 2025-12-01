@@ -12,154 +12,182 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <div class="panel-section">
-        <h2 class="panel-title">🎮 Controls</h2>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-        <div class="control-group">
-            <label class="control-label">Grid Size</label>
-            <div class="slider-container">
-                <input type="range" id="gridSize" min="10" max="30" value="20" class="slider">
-                <span id="gridSizeValue" class="slider-value">20x20</span>
-            </div>
-        </div>
-
-        <div class="control-group">
-            <label class="control-label">Animation Speed</label>
-            <div class="slider-container">
-                <input type="range" id="animSpeed" min="50" max="500" value="200" step="50" class="slider">
-                <span id="animSpeedValue" class="slider-value">200ms</span>
-            </div>
-        </div>
-
-        <div class="button-group">
-            <button id="startBtn" class="btn btn-primary">
-                <span class="btn-icon">▶️</span>
-                Start Simulation
-            </button>
-            <button id="pauseBtn" class="btn btn-secondary" disabled>
-                <span class="btn-icon">⏸️</span>
-                Pause
-            </button>
-            <button id="resetBtn" class="btn btn-danger">
-                <span class="btn-icon">🔄</span>
-                Reset Grid
-            </button>
-            <button id="randomObstacleBtn" class="btn btn-warning">
-                <span class="btn-icon">⚠️</span>
-                Spawn Random Obstacle
-            </button>
-            <div class="toggle-container" style="margin-top: 10px; display: flex; align-items: center; gap: 10px;">
-                <input type="checkbox" id="autoObstacleMode" style="width: 16px; height: 16px;">
-                <label for="autoObstacleMode" style="font-size: 14px; color: var(--text-secondary);">Auto-Spawn
-                    Obstacles</label>
-            </div>
-        </div>
-    </div>
-
-    <div class="panel-section">
-        <h2 class="panel-title">🎨 Drawing Mode</h2>
-        <div class="mode-buttons">
-            <button class="mode-btn active" data-mode="obstacle">
-                <span class="mode-icon">🧱</span>
-                <span>Obstacle</span>
-            </button>
-            <button class="mode-btn" data-mode="start">
-                <span class="mode-icon">🏁</span>
-                <span>Start</span>
-            </button>
-            <button class="mode-btn" data-mode="destination">
-                <span class="mode-icon">🎯</span>
-                <span>Destination</span>
-            </button>
-            <button class="mode-btn" data-mode="erase">
-                <span class="mode-icon">🧹</span>
-                <span>Erase</span>
-            </button>
-        </div>
-    </div>
-
-    <div class="panel-section">
-        <h2 class="panel-title">📊 Statistics</h2>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-label">Path Length</div>
-                <div class="stat-value" id="pathLength">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Nodes Explored</div>
-                <div class="stat-value" id="nodesExplored">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Obstacles</div>
-                <div class="stat-value" id="obstacleCount">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Reroutes</div>
-                <div class="stat-value" id="rerouteCount">0</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="panel-section">
-        <h2 class="panel-title">ℹ️ Instructions</h2>
-        <div class="instructions">
-            <ol>
-                <li>Set <strong>Start</strong> and <strong>Destination</strong> points</li>
-                <li>Draw <strong>Obstacles</strong> on the grid</li>
-                <li>Click <strong>Start Simulation</strong></li>
-                <li>Add obstacles while AGV is moving to see dynamic rerouting!</li>
-            </ol>
-        </div>
-    </div>
-    </aside>
-
-    <!-- Simulation Canvas -->
-    <main class="simulation-area">
-        <div class="canvas-container">
-            <canvas id="gridCanvas"></canvas>
-            <div class="canvas-overlay" id="canvasOverlay">
-                <div class="overlay-message">
-                    <div class="overlay-icon">🚗</div>
-                    <h3>Welcome to AGV Simulator</h3>
-                    <p>Click on the grid to set start and destination points</p>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🤖</div>
+                    <div>
+                        <h1 class="title">Smart AGV Simulator</h1>
+                        <p class="subtitle">Intelligent Path Planning & Obstacle Avoidance</p>
+                    </div>
+                </div>
+                <div class="status-badge" id="statusBadge">
+                    <div class="status-dot"></div>
+                    <span id="statusText">Ready</span>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <!-- Legend -->
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                <span>Start Point</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                <span>Destination</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                <span>AGV Robot</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                <span>Planned Path</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
-                <span>Obstacle</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: rgba(255, 255, 255, 0.05);"></div>
-                <span>Empty Path</span>
-            </div>
+        <div class="main-content">
+            <aside class="control-panel">
+                <div class="panel-section">
+                    <h2 class="panel-title">🎮 Controls</h2>
+
+                    <div class="control-group">
+                        <label class="control-label">Grid Size</label>
+                        <div class="slider-container">
+                            <input type="range" id="gridSize" min="10" max="30" value="20" class="slider">
+                            <span id="gridSizeValue" class="slider-value">20x20</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Animation Speed</label>
+                        <div class="slider-container">
+                            <input type="range" id="animSpeed" min="50" max="500" value="200" step="50" class="slider">
+                            <span id="animSpeedValue" class="slider-value">200ms</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="startBtn" class="btn btn-primary">
+                            <span class="btn-icon">▶️</span>
+                            Start Simulation
+                        </button>
+                        <button id="pauseBtn" class="btn btn-secondary" disabled>
+                            <span class="btn-icon">⏸️</span>
+                            Pause
+                        </button>
+                        <button id="resetBtn" class="btn btn-danger">
+                            <span class="btn-icon">🔄</span>
+                            Reset Grid
+                        </button>
+                        <button id="randomObstacleBtn" class="btn btn-warning">
+                            <span class="btn-icon">⚠️</span>
+                            Spawn Random Obstacle
+                        </button>
+                        <div class="toggle-container"
+                            style="margin-top: 10px; display: flex; align-items: center; gap: 10px;">
+                            <input type="checkbox" id="autoObstacleMode" style="width: 16px; height: 16px;">
+                            <label for="autoObstacleMode"
+                                style="font-size: 14px; color: var(--text-secondary);">Auto-Spawn
+                                Obstacles</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2 class="panel-title">🎨 Drawing Mode</h2>
+                    <div class="mode-buttons">
+                        <button class="mode-btn active" data-mode="obstacle">
+                            <span class="mode-icon">🧱</span>
+                            <span>Obstacle</span>
+                        </button>
+                        <button class="mode-btn" data-mode="start">
+                            <span class="mode-icon">🏁</span>
+                            <span>Start</span>
+                        </button>
+                        <button class="mode-btn" data-mode="destination">
+                            <span class="mode-icon">🎯</span>
+                            <span>Destination</span>
+                        </button>
+                        <button class="mode-btn" data-mode="erase">
+                            <span class="mode-icon">🧹</span>
+                            <span>Erase</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2 class="panel-title">📊 Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Path Length</div>
+                            <div class="stat-value" id="pathLength">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Nodes Explored</div>
+                            <div class="stat-value" id="nodesExplored">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Obstacles</div>
+                            <div class="stat-value" id="obstacleCount">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Reroutes</div>
+                            <div class="stat-value" id="rerouteCount">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2 class="panel-title">ℹ️ Instructions</h2>
+                    <div class="instructions">
+                        <ol>
+                            <li>Set <strong>Start</strong> and <strong>Destination</strong> points</li>
+                            <li>Draw <strong>Obstacles</strong> on the grid</li>
+                            <li>Click <strong>Start Simulation</strong></li>
+                            <li>Add obstacles while AGV is moving to see dynamic rerouting!</li>
+                        </ol>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="simulation-area">
+                <div class="canvas-container">
+                    <canvas id="gridCanvas"></canvas>
+                    <div class="canvas-overlay" id="canvasOverlay">
+                        <div class="overlay-message">
+                            <div class="overlay-icon">🚗</div>
+                            <h3>Welcome to AGV Simulator</h3>
+                            <p>Click on the grid to set start and destination points</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color"
+                            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <span>Start Point</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color"
+                            style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <span>Destination</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color"
+                            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        <span>AGV Robot</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color"
+                            style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                        <span>Planned Path</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color"
+                            style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                        <span>Obstacle</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: rgba(255, 255, 255, 0.05);"></div>
+                        <span>Empty Path</span>
+                    </div>
+                </div>
+            </main>
         </div>
-    </main>
-    </div>
     </div>
 
     <script src="pathfinding.js"></script>
     <script src="agv.js"></script>
     <script src="app.js"></script>
-    </body>
+</body>
 
 </html>
