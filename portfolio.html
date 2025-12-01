@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AGV Simulator - Intelligent Automation Project</title>
+    <meta name="description"
+        content="An intelligent AGV simulator with real-time obstacle detection and dynamic path planning for warehouse automation">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo-icon">🚗</div>
+                <span class="brand-text">Smart AGV</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#demo" class="nav-link">Demo</a>
+                <a href="#tech" class="nav-link">Technology</a>
+                <a href="index.html" class="nav-link cta-button">Live Simulator</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Intelligent Automation • Hackathon 2025
+            </div>
+            <h1 class="hero-title">
+                Smart AGV Simulator
+                <span class="gradient-text">with AI Path Planning</span>
+            </h1>
+            <p class="hero-subtitle">
+                Real-time obstacle detection and dynamic route optimization for next-generation warehouse automation
+            </p>
+            <div class="hero-cta">
+                <a href="index.html" class="btn btn-primary">
+                    <span>Launch Simulator</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="#overview" class="btn btn-secondary">
+                    <span>Learn More</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">A*</div>
+                    <div class="stat-label">Algorithm</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Real-time</div>
+                    <div class="stat-label">Path Planning</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Dynamic</div>
+                    <div class="stat-label">Obstacle Avoidance</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section overview-section" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Project Overview</span>
+                <h2 class="section-title">Intelligent Warehouse Navigation</h2>
+                <p class="section-subtitle">
+                    A sophisticated simulation demonstrating how Automated Guided Vehicles navigate complex warehouse
+                    environments with real-time decision making
+                </p>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-card card-highlight">
+                    <div class="card-icon">🎯</div>
+                    <h3>The Challenge</h3>
+                    <p>Modern warehouses need intelligent automation systems that can adapt to dynamic environments,
+                        avoid obstacles, and optimize routes in real-time without human intervention.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Our Solution</h3>
+                    <p>A smart AGV simulator that uses advanced pathfinding algorithms to navigate warehouse grids,
+                        detect obstacles, and recalculate optimal routes on the fly.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>The Impact</h3>
+                    <p>Demonstrates the future of warehouse automation with intelligent systems that increase
+                        efficiency, reduce errors, and adapt to changing conditions seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Core Features</span>
+                <h2 class="section-title">Intelligent Automation Capabilities</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Interactive 2D Grid Map</h3>
+                    <p>Customizable warehouse environment with drag-and-drop obstacle placement. Each grid cell can be
+                        configured as empty path, obstacle, start point, or destination.</p>
+                    <ul class="feature-list">
+                        <li>Visual grid-based interface</li>
+                        <li>Click-to-place obstacles</li>
+                        <li>Configurable start/end points</li>
+                        <li>Real-time map updates</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <div class="feature-icon">🤖</div>
+                    <h3>Smart AGV Agent</h3>
+                    <p>Animated vehicle icon that intelligently navigates the warehouse grid, following optimal paths
+                        and responding to environmental changes.</p>
+                    <ul class="feature-list">
+                        <li>Smooth movement animation</li>
+                        <li>Real-time position tracking</li>
+                        <li>Visual path indication</li>
+                        <li>Status indicators</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card feature-highlight">
+                    <div class="feature-number">03</div>
+                    <div class="feature-icon">🧠</div>
+                    <h3>A* Path Planning Algorithm</h3>
+                    <p>Industry-standard pathfinding that calculates the shortest, most efficient route from start to
+                        destination while avoiding all obstacles.</p>
+                    <ul class="feature-list">
+                        <li>Optimal path calculation</li>
+                        <li>Heuristic-based search</li>
+                        <li>Guaranteed shortest path</li>
+                        <li>Efficient computation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Static Obstacle Avoidance</h3>
+                    <p>Intelligent detection and navigation around pre-placed obstacles like walls, boxes, and machinery
+                        in the warehouse environment.</p>
+                    <ul class="feature-list">
+                        <li>Collision detection</li>
+                        <li>Safe path validation</li>
+                        <li>Multiple obstacle types</li>
+                        <li>Visual obstacle marking</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card feature-highlight">
+                    <div class="feature-number">05</div>
+                    <div class="feature-icon">⚡</div>
+                    <h3>Dynamic Obstacle Handling</h3>
+                    <p>Real-time adaptation to new obstacles that appear during navigation. The AGV stops, recalculates,
+                        and finds a new optimal path automatically.</p>
+                    <ul class="feature-list">
+                        <li>Real-time obstacle detection</li>
+                        <li>Instant path recalculation</li>
+                        <li>Adaptive navigation</li>
+                        <li>Continuous monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">06</div>
+                    <div class="feature-icon">📊</div>
+                    <h3>Visual Path Visualization</h3>
+                    <p>Clear visual representation of the calculated path, explored nodes, and AGV movement for
+                        educational and demonstration purposes.</p>
+                    <ul class="feature-list">
+                        <li>Path highlighting</li>
+                        <li>Explored node tracking</li>
+                        <li>Movement animation</li>
+                        <li>Status updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="section demo-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">How It Works</span>
+                <h2 class="section-title">See It In Action</h2>
+            </div>
+
+            <div class="demo-steps">
+                <div class="demo-step">
+                    <div class="step-visual">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">📍</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Set Start & Destination</h3>
+                        <p>Click to place the AGV's starting position and its target destination on the warehouse grid.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="demo-arrow">→</div>
+
+                <div class="demo-step">
+                    <div class="step-visual">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">🧱</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Place Obstacles</h3>
+                        <p>Add obstacles to simulate warehouse elements like walls, shelves, and machinery.</p>
+                    </div>
+                </div>
+
+                <div class="demo-arrow">→</div>
+
+                <div class="demo-step">
+                    <div class="step-visual">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">🔍</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Calculate Path</h3>
+                        <p>The A* algorithm finds the shortest safe route from start to destination.</p>
+                    </div>
+                </div>
+
+                <div class="demo-arrow">→</div>
+
+                <div class="demo-step">
+                    <div class="step-visual">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">🚗</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Watch AGV Navigate</h3>
+                        <p>The AGV smoothly travels along the calculated path toward its destination.</p>
+                    </div>
+                </div>
+
+                <div class="demo-arrow">→</div>
+
+                <div class="demo-step">
+                    <div class="step-visual">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">⚠️</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Add Dynamic Obstacle</h3>
+                        <p>Place a new obstacle in the AGV's path while it's moving.</p>
+                    </div>
+                </div>
+
+                <div class="demo-arrow">→</div>
+
+                <div class="demo-step">
+                    <div class="step-visual">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">🔄</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Adaptive Rerouting</h3>
+                        <p>AGV stops, recalculates a new optimal path, and continues to destination safely.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-cta">
+                <a href="index.html" class="btn btn-primary btn-large">
+                    <span>Try the Live Simulator</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="section tech-section" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Technology Stack</span>
+                <h2 class="section-title">Built with Modern Web Technologies</h2>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🌐</div>
+                    <h3>HTML5 Canvas</h3>
+                    <p>High-performance 2D rendering for smooth grid visualization and real-time animations</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Vanilla JavaScript</h3>
+                    <p>Pure ES6+ JavaScript for efficient pathfinding algorithms and interactive controls</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🎨</div>
+                    <h3>Modern CSS3</h3>
+                    <p>Advanced styling with gradients, animations, and glassmorphism effects</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🧮</div>
+                    <h3>A* Algorithm</h3>
+                    <p>Industry-standard pathfinding with heuristic optimization for shortest paths</p>
+                </div>
+            </div>
+
+            <div class="tech-details">
+                <div class="tech-detail-card">
+                    <h3>Why This Approach?</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-icon">✅</div>
+                            <div>
+                                <h4>Beginner-Friendly</h4>
+                                <p>No complex frameworks or dependencies required</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">✅</div>
+                            <div>
+                                <h4>Industry-Relevant</h4>
+                                <p>Real algorithms used in actual warehouse automation</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">✅</div>
+                            <div>
+                                <h4>Visually Impressive</h4>
+                                <p>Professional UI that demonstrates technical capability</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">✅</div>
+                            <div>
+                                <h4>Fully Functional</h4>
+                                <p>Complete working simulation, not just a concept</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section impact-section">
+        <div class="container">
+            <div class="impact-content">
+                <div class="impact-text">
+                    <span class="section-badge">Real-World Impact</span>
+                    <h2>Transforming Warehouse Operations</h2>
+                    <p>This simulation demonstrates the core technology behind modern warehouse automation systems used
+                        by industry leaders like Amazon, Alibaba, and DHL. By implementing intelligent pathfinding and
+                        dynamic obstacle avoidance, AGVs can:</p>
+                    <ul class="impact-list">
+                        <li><strong>Increase Efficiency:</strong> Optimal routing reduces travel time by up to 40%</li>
+                        <li><strong>Enhance Safety:</strong> Real-time obstacle detection prevents collisions</li>
+                        <li><strong>Reduce Costs:</strong> Automated navigation eliminates manual guidance needs</li>
+                        <li><strong>Scale Operations:</strong> Multiple AGVs can coordinate in complex environments</li>
+                    </ul>
+                </div>
+                <div class="impact-visual">
+                    <div class="metric-card">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Faster Operations</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">24/7</div>
+                        <div class="metric-label">Autonomous Work</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Accuracy Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to See It in Action?</h2>
+                <p>Experience the future of warehouse automation with our interactive simulator</p>
+                <a href="index.html" class="btn btn-primary btn-large">
+                    <span>Launch Live Simulator</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-icon">🚗</div>
+                    <span class="brand-text">Smart AGV Simulator</span>
+                </div>
+                <p class="footer-text">Intelligent Automation • Hackathon 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
