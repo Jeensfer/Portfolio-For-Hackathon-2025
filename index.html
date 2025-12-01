@@ -17,26 +17,23 @@
 
 <body>
     <div class="container">
-        <!-- Header Section -->
         <header class="header">
             <div class="header-content">
                 <div class="logo-section">
-                    <div class="logo-icon">🚗</div>
+                    <div class="logo-icon">🤖</div>
                     <div>
                         <h1 class="title">Smart AGV Simulator</h1>
-                        <p class="subtitle">Intelligent Warehouse Automation</p>
+                        <p class="subtitle">Intelligent Path Planning & Obstacle Avoidance</p>
                     </div>
                 </div>
                 <div class="status-badge" id="statusBadge">
-                    <span class="status-dot"></span>
+                    <div class="status-dot"></div>
                     <span id="statusText">Ready</span>
                 </div>
             </div>
         </header>
 
-        <!-- Main Content -->
         <div class="main-content">
-            <!-- Control Panel -->
             <aside class="control-panel">
                 <div class="panel-section">
                     <h2 class="panel-title">🎮 Controls</h2>
@@ -78,7 +75,8 @@
                             style="margin-top: 10px; display: flex; align-items: center; gap: 10px;">
                             <input type="checkbox" id="autoObstacleMode" style="width: 16px; height: 16px;">
                             <label for="autoObstacleMode"
-                                style="font-size: 14px; color: var(--text-secondary);">Auto-Spawn Obstacles</label>
+                                style="font-size: 14px; color: var(--text-secondary);">Auto-Spawn
+                                Obstacles</label>
                         </div>
                     </div>
                 </div>
@@ -140,7 +138,6 @@
                 </div>
             </aside>
 
-            <!-- Simulation Canvas -->
             <main class="simulation-area">
                 <div class="canvas-container">
                     <canvas id="gridCanvas"></canvas>
@@ -153,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Legend -->
                 <div class="legend">
                     <div class="legend-item">
                         <div class="legend-color"
